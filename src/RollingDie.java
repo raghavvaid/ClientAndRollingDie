@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class RollingDie {
 
     public int toss(){
@@ -32,6 +34,7 @@ public class RollingDie {
             }
         }
         if (currentCount > bestCount) {bestRun = currentRun;}
+        if (bestCount == 0) return -1;
         return bestRun;
     }
 
@@ -45,9 +48,14 @@ public class RollingDie {
                 System.out.print(tossArr[i] + ",");
             System.out.println();
 
+
             int n = nc.getBestRun(tossArr);
             System.out.println(n);
         }
+        int y[]= {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        System.out.println(Arrays.toString(y));
+        int x = nc.getBestRun(y);
+        System.out.println(x);
     }
 
 }
